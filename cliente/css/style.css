@@ -1,0 +1,51 @@
+/* Encabezado y Logo */
+
+header nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+}
+
+/* Estilo del Logo */
+
+header .logo .icono {
+	display: inline;
+	background-size: auto 100%;
+	vertical-align: middle;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+header .logo .icono {
+	width: 100px;
+	height: 100px;
+}
+
+@media( max-width: 600px ){
+
+	header .logo .icono {
+		width: 55px;
+		height: 55px;
+	}
+
+}
+
+
+/* Contenido */
+
+.container .row {
+	margin-bottom: 0;
+}
+
+.container .row .menu{
+	display: flex;
+	height: 4rem;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.container .row .divider {
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+}
