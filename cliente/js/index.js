@@ -1,6 +1,8 @@
 // Al finalizarse de cargar el DOM:
 $(function() {
+	console.log('Pase por el index!');
 	// Se obtienen del backend y cargan en el DOM las competencias existentes
-	var competenciasController = new CompetenciasController();
- 	competenciasController.obtenerCompetencias();
+	var sorteosController = new SorteosController();
+	 sorteosController.obtenerUsuarios();
+	 
 });

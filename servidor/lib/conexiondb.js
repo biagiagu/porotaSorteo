@@ -5,7 +5,7 @@ var conexiondb = mysql.createConnection({
     port: '3306',
     user: 'root',
     password: 'Corralejo#13',
-    database: 'competencias'
+    database: 'porota'
 });
 
 //debemos exportar la variable de conexion definida antes

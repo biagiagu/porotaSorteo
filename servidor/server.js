@@ -21,11 +21,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // //llamamos al controlador
-// var competenciaController=require('./controlador/competenciasController')
+var sorteoController=require('./controller/sorteoController')
 
 
-// //definimos una ruta para competencias
-// app.get('/competencias', competenciaController.obternerCompetencia);
+//definimos una ruta para competencias
+app.get('/usuarios', sorteoController.obternerUsuarios);
 // app.get('/competencias/:id/peliculas', competenciaController.obtenerOpciones);
 // app.post('/competencias/:id/voto', competenciaController.guardarVoto);
 

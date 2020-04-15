@@ -1,32 +1,41 @@
 // Esta es la ip y puerto en que necesitamos que esté el backend disponible
-var server = 'http://0.0.0.0:8080';
+var server = 'http://localhost:8080';
 
-function CompetenciasController () {
+function SorteosController (){
 
-	// Esta método obtiene y carga todas las competencias existentes
-	this.obtenerCompetencias = function (){
+	// Esta método obtiene y carga toda la lista de usuarios registrados y elegibles para participar
+	this.obtenerUsuarios = function (){
 		// Como luego se necesita usar "this" dentro de la función de callback, se guarda en self la referencia a CompetenciasController
 		var self = this;
-
-		// Se obtiene de la api el listado de competencias
-		$.getJSON(server+"/competencias", function (data) {
+		
+		// Se obtiene desde la api del server el listado de usuarios
+		$.getJSON(server+"/usuarios", function (data) {
 				// Se carga la información obtenida en el DOM
-				self.cargarCompetencias(data);
+				console.log(data, data.length);
+
+				self.cargarUsuarios(data);
 		 });
 	},
 
-	this.cargarCompetencias = function (data){
+	this.cargarUsuarios = function (data){
 		// data es el listado de competencias que retornó la api (un objeto json)
 
 		// Oculto la plantilla
-		$(".competenciaPlantilla").hide();
+		//$(".competenciaPlantilla").hide();
+
 		// Se recorren iterativamente, uno a uno, los resultados de competencias
 		var cantidad = data.length;
+		
+		console.log(data.length);
+		console.log(cantidad);
+		console.log(data);
+
 		var idColor = 1;
 		var idColorCrece = true;
 		for (i = 0; i < cantidad; i++) {
 			// Se clona la plantilla y la nueva copia ya no es una plantilla
 			var divCompetencia = $(".competenciaPlantilla").clone().removeClass("competenciaPlantilla");
+
 			// Se coloca el id correcto (data[i].id) de cada competencia en los links de acciones
 			$(divCompetencia).find('.link').each( function(){
 				$( this ).attr("href",$( this ).attr("href")+data[i].id);
@@ -39,18 +48,22 @@ function CompetenciasController () {
 				idColor++;
 			} else {
 				idColor--;
-			}
+			};
 
 			if (idColor > 4 || idColor < 1) {
 				idColor = idColorCrece ? 4 : 1;
 				idColorCrece = !idColorCrece;
-			}
+			};
 			// Se incorpora el nuevo div generado al DOM dentro del div con clase competencias
 			$(".competencias").append(divCompetencia);
 			// Se muestra el nuevo div con la competencia (la plantilla estaba oculta)
 			$(divCompetencia).show();
 		}
-	},
+	}
+
+};
+
+/*COMENTADO---------------------------------------------------------
 	// Esta método obtiene y carga los detalles de una competencia
 	this.obtenerCompetencia =  function (id){
 		// Como luego se necesita usar "this" dentro de la función de callback, se guarda en self la referencia a CompetenciasController
@@ -61,6 +74,7 @@ function CompetenciasController () {
 	    	self.cargarCompetencia(id, data);
 	    });
 	},
+	
 	this.cargarCompetencia = function (id, data){
 		// data es el detalle de una competencia que retornó la api (un objeto json)
 		// Se coloca en el elemento correspondiente el nombre de la competencia
@@ -85,6 +99,7 @@ function CompetenciasController () {
 	    	self.cargarOpciones(id, data);
 	    });
 	},
+
 	this.cargarOpciones = function (id, opciones){
 		// Se carga el nombre de la competencia en el título de la página
 		$("#nombreCompetencia").text(opciones.competencia);
@@ -143,6 +158,7 @@ function CompetenciasController () {
 		    	}
 		    });
 	},
+
 	// Este método obtiene los/as actores/actrices existentes del backend y los carga en un select en el DOM
 	this.cargarActores = function (){
 		// Se obtienen los/as actores/actrices existentes del backend
@@ -158,6 +174,7 @@ function CompetenciasController () {
 		    	}
 		    });
 	},
+
 	// Este método obtiene y carga en el DOM los resultados de una competencia (películas más votadas)
 	this.obtenerResultados =  function (id){
 		// Como luego se necesita usar "this" dentro de la función de callback, se guarda en self la referencia a CompetenciasController
@@ -169,6 +186,7 @@ function CompetenciasController () {
 	    	self.cargarResultados(id, data);
 	    });
 	},
+
 	this.cargarResultados =  function (id, data){
 		// Se carga el nombre de la competencia en el contenedor del título
 		$("#nombreCompetencia").text(data.competencia);
@@ -192,4 +210,6 @@ function CompetenciasController () {
 		}
 
 	}
-};
+*/
+
+
