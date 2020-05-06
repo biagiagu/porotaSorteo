@@ -5,10 +5,11 @@ use porota;
 
 drop table if exists usuarios;
 CREATE TABLE `usuarios` (
-  `id` int,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50),
   `apellido` varchar(50),
   `dni` int,
+  `password` varchar(20),
   `mail` varchar(50),
   `tel` int,
   `foto` varchar(50),

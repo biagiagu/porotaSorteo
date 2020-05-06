@@ -10,55 +10,23 @@ function SorteosController (){
 		
 		// Se obtiene desde la api del server el listado de usuarios
 		$.getJSON(server+"/usuarios", function (data) {
-				// Se carga la información obtenida en el DOM
-				console.log(data, data.length);
-
+				
+			// Se carga la información obtenida en el DOM
 				self.cargarUsuarios(data);
+
 		 });
 	},
 
 	this.cargarUsuarios = function (data){
-		// data es el listado de competencias que retornó la api (un objeto json)
+		// data es el listado de usuarios retornó la api (un array)
 
-		// Oculto la plantilla
-		//$(".competenciaPlantilla").hide();
-
-		// Se recorren iterativamente, uno a uno, los resultados de competencias
-		var cantidad = data.length;
-		
-		console.log(data.length);
-		console.log(cantidad);
-		console.log(data);
-
-		var idColor = 1;
-		var idColorCrece = true;
-		for (i = 0; i < cantidad; i++) {
-			// Se clona la plantilla y la nueva copia ya no es una plantilla
-			var divCompetencia = $(".competenciaPlantilla").clone().removeClass("competenciaPlantilla");
-
-			// Se coloca el id correcto (data[i].id) de cada competencia en los links de acciones
-			$(divCompetencia).find('.link').each( function(){
-				$( this ).attr("href",$( this ).attr("href")+data[i].id);
-			});
-			// Se coloca el nombre de cada competencia
-			$(divCompetencia).find('.titulo').text(data[i].nombre);
-			$(divCompetencia).find('.card').addClass('color'+idColor);
+		// Se recorren iterativamente, uno a uno, los resultados de data
+		data.forEach(element => {
 			
-			if (idColorCrece){
-				idColor++;
-			} else {
-				idColor--;
-			};
-
-			if (idColor > 4 || idColor < 1) {
-				idColor = idColorCrece ? 4 : 1;
-				idColorCrece = !idColorCrece;
-			};
-			// Se incorpora el nuevo div generado al DOM dentro del div con clase competencias
-			$(".competencias").append(divCompetencia);
-			// Se muestra el nuevo div con la competencia (la plantilla estaba oculta)
-			$(divCompetencia).show();
-		}
+			// creacion cada li dentro del ul.
+			$("#listaUsuarios").append(`<li class="collection-item" id="${element.id}">${element.nombre} ${element.apellido}</li>`);
+			
+		});
 	}
 
 };

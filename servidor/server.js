@@ -1,7 +1,12 @@
+//PORTOTARED - server.js
+
 //llamamos a las librerias que necesitemos
 //creamos la App Express
 const express = require("express");
-let app = express();
+const app = express();
+
+//llamamos a bcrypt que encriptara nuestros passwords
+const bcrypt = require("bcrypt");
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -26,6 +31,9 @@ var sorteoController=require('./controller/sorteoController')
 
 //definimos una ruta para competencias
 app.get('/usuarios', sorteoController.obternerUsuarios);
+
+app.post('/usuarios', sorteoController.crearUsuario);
+
 // app.get('/competencias/:id/peliculas', competenciaController.obtenerOpciones);
 // app.post('/competencias/:id/voto', competenciaController.guardarVoto);
 
@@ -34,6 +42,7 @@ app.get('/usuarios', sorteoController.obternerUsuarios);
 // este es el puerto donde vamos a estar escuchando la app y activamos la app
 let puerto = 8080;
 
+// activamos la app en el servidor
 app.listen(
     puerto, 
     ()=>{
