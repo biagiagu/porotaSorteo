@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- HEAD -->
+
+	<head>
+		<meta charset="UTF-8" />
+
+		<!--Import Google Icon Font-->
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+			/>
+		<!--Import boostrap css-->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+			/>
+
+		<!-- Import custom CSS -->
+		<link rel="stylesheet" href="../css/style.css" />
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Import JQuery -->
+		<script src="../js/jquery.js"></script>
+
+		<title>Porota Vida</title>
+	</head>
+
+	<!-- BODY -->
+
+	<body>
+		<!-- Header of the page -->
+		<header class="header gridContainer material">
+			<div class="logo">
+				<a href="index.html" class="logo"><img src="../img/logo-porota-150x150.png" alt="" class="logo" />
+					<h1>Porota Red</h1></a>
+			</div>
+		</header>
+
+		<div class="mainContent gridContainer">
+			<!-- Menu -->
+			<nav class="nav material">
+				<button type="button" class="btn btn-primary"><i class="material-icons left">casino</i>EstoEsUnBoton1</button>
+				<button type="button" class="btn btn-primary"><i class="material-icons left">group</i>EstoEsUnBoton2</button>
+				<button type="button" class="btn btn-primary"><i class="material-icons">person_add</i>EstoEsUnBoton3</button>
+				<button type="button" class="btn btn-primary">EstoEsUnBoton4</button>
+			</nav>
+
+			<aside class="sideBar material">
+				<h3>Side Bar</h3>
+				<p>
+					The semiotics of the Flatline as a construct, a hardwired ROM
+					cassette replicating a dead man’s skills, obsessions, kneejerk
+					responses. Case felt the edge of the arcade showed him broken
+					lengths of damp chipboard and the drifting shoals of waste. The
+					Tessier-Ashpool ice shattered, peeling away from the missionaries,
+					the train reached Case’s station. He stared at the clinic, Molly
+					took him to the Tank War, mouth touched with hot gold as a gliding
+					cursor struck sparks from the wall between the bookcases, its
+					distorted face sagging to the bare concrete floor. The Sprawl was a
+					square of faint light. <br />
+				</p>
+			</aside>
+			<!-- Main Content -->
+			<section class="section gridContainer material">
+				<!-- Titulo -->
+				<h3 class="titulo">Ingresa tus datos!</h3>
+
+				<!-- Formulario -->
+				<form class="form gridContainer" action="" method="post">
+					
+					<div class="inputNombre form-group">
+						<label for="nombre">Nombre</label>
+						<input type="text" name="nombre" id="nombre" class="form-control">
+						<small class="form-text text-muted">Como figura en su DNI</small>
+					</div>
+					
+					<div class="inputApellido form-group">
+						<label for="apellido">Apellido</label>
+						<input type="text" name="apellido" id="apellido" class="form-control">
+						<small class="form-text text-muted">Como figura en su DNI</small>
+					</div>
+					
+					<div class="inputMail form-group">
+						<label for="mail">e-mail</label>
+						<input type="text" name="mail" id="mail" class="form-control" placeholder="ejemplo@mail.com">
+						<small class="form-text text-muted"></small>
+					</div>
+					
+					<div class="inputDni form-group">
+						<label for="dni">DNI</label>
+						<input type="numeric" name="dni" id="dni" class="form-control">
+						<small class="form-text text-muted">Sin incluir los puntos</small>
+					</div>
+					
+					<div class="inputTelefono form-group">
+						<label for="telefono">Telefono</label>
+						<input type="numeric" name="telefono" id="telefono" class="form-control" placeholder="+54 (11) 9999-0000">
+						<small class="form-text text-muted"></small>
+					</div>
+
+					<div class="inputSexo">
+						<p>Sexo:</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="sexo" id="masculino" value="M">
+							<label class="form-check-label" for="sexo">Masculino</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="sexo" id="femenino" value="F">
+							<label class="form-check-label" for="sexo">Femenino</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="sexo" id="otro" value="O">
+							<label class="form-check-label" for="sexo">No Decir</label>
+						</div>
+					</div>
+					
+					<div class="inputNacimiento form-group">
+						<label for="fechaNaciemiento">Fehca de Nacieminto</label>
+						<input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" class="form-control">
+					</div>
+					
+					<div class="inputDireccionL1 form-group">
+						<label for="direccionL1">Dirección</label>
+						<input type="text" name="direccionL1" id="direccionL1" class="form-control">
+					</div>
+					<div class="inputDireccionL2 form-group">
+						<label for="direccionL2">Dirección (continuación)</label>
+						<input type="text" name="direccionL2" id="direccionL2" class="form-control">
+					</div>
+					<div class="inputCodigoPostal form-group">
+						<label for="codigoPostal">Código Postal</label>
+						<input type="text" name="codigoPostal" id="codigoPostal" class="form-control">
+					</div>
+					<div class="inputCiudad form-group">
+						<label for="ciudad">Ciudad</label>
+						<input type="text" name="ciudad" id="ciudad" class="form-control">
+					</div>
+					<div class="inputProvincia form-group">
+						<label for="provincia">Provincia</label>
+						<input type="select" name="provincia" id="provincia" class="form-control">
+					</div>
+					<div class="inputPais form-group">
+						<label for="pais">Pais</label>
+						<input type="select" name="pais" id="pais" class="form-control">
+					</div>
+
+					<div class="inputPerfil form-group">
+						<label for="perfil">Perfil</label>
+						<input type="numeric" name="perfil" id="perfil" class="form-control" placeholder="">
+						<small class="form-text text-muted"></small>
+					</div>
+
+					<div class="inputSubmit form-group">
+						<input class="btn btn-success" type="submit" name="Guardar" value="Guardar Datos"/>
+						<input class="btn btn-primary" type="reset" name="Reset" value="Borrar Formulario"/>
+					</div>
+
+
+				</form>
+			</section>
+
+			<footer class="footer material">
+				<p>Poroto Red es parte del proyecto Porota Vida
+					<br><br>
+					Desarrollado por Ansuz - 2020
+					<br>
+					#quedateencasa</p>
+			</footer>
+		</div>
+
+		<!--JavaScript at end of body for optimized loading-->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"></script>
+		
+		<script src="../js/sorteo.js"></script>
+		<script src="../js/index.js"></script>
+
+
+	</body>
+</html>

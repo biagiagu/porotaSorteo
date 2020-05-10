@@ -9,17 +9,17 @@
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
-		/>
-		<!--Import materialize.css-->
+			/>
+		<!--Import boostrap css-->
 		<link
-			type="text/css"
 			rel="stylesheet"
-			href="../css/materialize.css"
-			media="screen,projection"
-		/>
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+			/>
+
 		<!-- Import custom CSS -->
 		<link rel="stylesheet" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/normalize.css" />
 
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,41 +33,71 @@
 	<!-- BODY -->
 	<body>
 		<!-- Header of the page -->
-		<header>
-			<!-- Nav Menu -->
-			<nav>
-				<a href="" class="logo"><img src="../img/logo-porota-150x150.png" alt="" class="icono grande"></a>
-			</nav>
+		<header class="header gridContainer material">
+			<div class="logo">
+				<a href="" class="logo"><img src="../img/logo-porota-150x150.png" alt="" class="logo" />
+					<h1>Porota Red</h1></a>
+			</div>
 		</header>
 
 		<!-- Content -->
-		<div class="container">
-			<div class="row menu">
-				
-					<a class="col s12 m12 l4 waves-effect waves-light btn ">
-						 <i class="material-icons left">casino</i>
-						 Sorteo
-					</a>
-					<a class="col s12 m12 l4 waves-effect waves-light btn "><i class="material-icons left">group</i>Grupo</a|>
-					<a class="col s12 m12s l4 waves-effect waves-light btn" id="login"><i class="material-icons left">person_add</i>Ingresar o Registrarse</a>
-					
-				
-			</div>
-			<div class="row">
-				<div class="col s12 m12 l12">
-					<div class="divider"></div>
+		<div class="mainContent gridContainer">
+			<!-- Menu -->
+			<nav class="nav material">
+				<button type="button" class="btn btn-primary"><i class="material-icons left">casino</i>EstoEsUnBoton1</button>
+				<button type="button" class="btn btn-primary"><i class="material-icons left">group</i>EstoEsUnBoton2</button>
+				<button type="button" class="btn btn-primary"><i class="material-icons">person_add</i>EstoEsUnBoton3</button>
+				<button type="button" class="btn btn-primary">EstoEsUnBoton4</button>
+			</nav>
 
-					<!-- Lista de usuarios -->
-					<ul class="collection" id="listaUsuarios">
-						
-					</ul>
+			<aside class="sideBar material">
+				<h3>Side Bar</h3>
+				<p>
+					The semiotics of the Flatline as a construct, a hardwired ROM
+					cassette replicating a dead man’s skills, obsessions, kneejerk
+					responses. Case felt the edge of the arcade showed him broken
+					lengths of damp chipboard and the drifting shoals of waste. The
+					Tessier-Ashpool ice shattered, peeling away from the missionaries,
+					the train reached Case’s station. He stared at the clinic, Molly
+					took him to the Tank War, mouth touched with hot gold as a gliding
+					cursor struck sparks from the wall between the bookcases, its
+					distorted face sagging to the bare concrete floor. The Sprawl was a
+					square of faint light. <br />
+				</p>
+			</aside>
+			<!-- Main Content -->
+			<section class="section gridContainer material">
+				<!-- Titulo -->
+				<h3 class="titulo">Listado de Parejas</h3>
 
+				<!-- Formulario -->
+				<div class="listadoDeParejas">Case felt the edge of the room where Case waited. The knives seemed to move of their own accord, gliding with a random collection of European furniture, as though Deane had once intended to use the place as his home. He stared at the rear of the arcade showed him broken lengths of damp chipboard and the dripping chassis of a gutted game console. He stared at the clinic, Molly took him to the simple Chinese hollow points Shin had sold him. Light from a service hatch at the rear wall dulling the roar of the car’s floor. The alarm still oscillated, louder here, the rear of the arcade showed him broken lengths of damp chipboard and the robot gardener.
 				</div>
-			</div>
+			</section>
+
+			<footer class="footer material">
+				<p>Poroto Red es parte del proyecto Porota Vida
+					<br><br>
+					Desarrollado por Ansuz - 2020
+					<br>
+					#quedateencasa</p>
+			</footer>
 		</div>
 
 		<!--JavaScript at end of body for optimized loading-->
-		<script src="../js/materialize.min.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"></script>
+		
 		<script src="../js/sorteo.js"></script>
 		<script src="../js/index.js"></script>
 	</body>

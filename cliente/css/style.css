@@ -1,53 +1,266 @@
-/* Encabezado y Logo */
 
-header nav{
+/* ########## definicion de estilos generales ################*/
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Raleway:wght@500&display=swap');
+
+* {
+	font-family: 'Raleway', sans-serif;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Londrina Solid', cursive;
+	color: #F23630;
+	margin-bottom: 0;
+
+}
+
+
+body {
+	background-color: #e9ecf4;
+	font-size: 16px;
+}
+
+.material {
+	border-radius: 5px;
+	-webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.gridContainer{
+	display: grid;
+	grid-gap: 1rem;
+}
+
+
+/* ################# Encabezado ################### */
+
+.header.gridContainer {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "Logo Logo";
+	background-color: #2CF1E4;
+	margin-top: 0;
+	padding: 1rem;
+	position: sticky;
+	top: 0px;
+}
+
+/* Logo */
+header.gridContainer .logo{
+	grid-area: Logo;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: auto;
 }
 
-/* Estilo del Logo */
-
-header .logo .icono {
-	display: inline;
-	background-size: auto 100%;
-	vertical-align: middle;
-	margin-top: 10px;
-	margin-bottom: 10px;
+header.gridContainer div a,
+header.gridContainer div h1 {
+	display: inline-block;
+	text-decoration: none;
 }
 
-header .logo .icono {
-	width: 100px;
+header.gridContainer div img {
 	height: 100px;
+	vertical-align: inherit; 
 }
 
-@media( max-width: 600px ){
+header.gridContainer div h1{
+	font-size: 6rem;
+	height: 6rem;
+	margin: 0 1rem;
+}
 
-	header .logo .icono {
-		width: 55px;
-		height: 55px;
+/* ############# Seccion principal ############ */
+.mainContent {
+	width: 90%;
+	margin: 1rem auto;
+	max-width: 1200px;
+
+}
+
+.mainContent.gridContainer {
+	grid-template-columns: 2fr 1fr;
+	grid-template-areas:	"nav	nav"
+							"section	sideBar"
+							"footer	footer";
+}
+
+.mainContent .section,
+.mainContent .nav,
+.mainContent .sideBar {
+	background-color: #fff;
+	padding: 1rem;
+}
+
+.mainContent .nav {
+	grid-area: nav;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.mainContent .sideBar {
+	grid-area: sideBar;
+}
+
+.mainContent .section {
+	grid-area: section;
+}
+.mainContent .section.gridContainer {
+	grid-template-rows: 3rem auto;
+}
+
+/* FORMULARIO */
+.form.gridContainer {
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas: 	"Nombre		Apellido"
+							"Mail		Mail"
+							"Dni		Telefono"
+							"Sexo		Sexo"
+							"Nacimiento	Nacimiento"
+							"Direccion1	Direccion1"
+							"Direccion2 Direccion2"
+							"Pais		Provincia"
+							"Ciudad		CP"
+							"Perfil 	."
+							"Botones	Botones";
+}
+
+.form .inputNombre {
+	grid-area: Nombre;
+}
+.form .inputApellido {
+	grid-area: Apellido;
+}
+.form .inputMail {
+	grid-area: Mail;
+}
+.form .inputDni {
+	grid-area: Dni;
+}
+.form .inputTelefono {
+	grid-area: Telefono;
+}
+.form .inputSexo {
+	grid-area: Sexo;
+	grid-column-start: 1;
+	grid-column-end: -1;
+}
+.form .inputSexo .form-check-inline {
+	position: static;
+}
+.form .inputNacimiento{
+	grid-area: Nacimiento;
+}
+.form .inputDireccionL1 {
+	grid-area: Direccion1;
+}
+.form .inputDireccionL2 {
+	grid-area: Direccion2;
+}
+.form .inputCodigoPostal {
+	grid-area: CP;
+}
+.form .inputCiudad {
+	grid-area: Ciudad;
+}
+.form .inputProvincia {
+	grid-area: Provincia;
+}
+.form .inputPais {
+	grid-area: Pais;
+}
+.form .inputPerfil{
+	grid-area: Perfil;
+}
+.form .inputSubmit {
+	grid-area: Botones;
+	display: flex;
+	justify-content: space-around;
+}
+
+/* ################# Footer ##################### */
+
+.mainContent .footer {
+	grid-area: footer;
+	background-color: #2CF1E4;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainContent .footer p{
+	text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+
+	body {
+		background-color: teal;
+	}
+		
+	/* ############## Encabezdo Responsive ################### */
+	
+	.header.gridContainer {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "Logo Logo";
+		
 	}
 
-}
-
-
-/* Contenido */
-
-.container .row {
-	margin-bottom: 0;
-}
-
-.container .row.menu{
-	margin-top: 1rem;
-	height: 4rem;
+	.header.gridContainer div img {
+		height: 50px;
+		vertical-align: inherit; 
+	}
 	
-}
-.container .row .btn {
-	/* margin: 0.1rem; */
-}
+	.header.gridContainer div h1{
+		font-size: 3rem;
+		height: 3rem;
+		margin: 0 1rem;
+	}
 
-.container .row .divider {
-	margin-top: 0rem;
-	margin-bottom: 0rem;
+	/* Menu */
+
+	/* .mainContent .nav {
+		justify-content: space-between;
+	} */
+
+	/* ################### Contenido Principal Responsive ########## */
+	.mainContent {
+		width: 95%;
+	}
+
+	.mainContent.gridContainer {
+		grid-template-columns: 2fr 1fr;
+		grid-template-areas:	"nav		nav"
+								"section	section"
+								"sideBar	sideBar"
+								"footer		footer";
+	}
+
+	/* Formulario Responsive */
+
+	.form.gridContainer {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: 	"Nombre		Nombre"
+								"Apellido	Apellido"
+								"Mail		Mail"
+								"Dni		Dni"
+								"Telefono	Telefono"
+								"Sexo		Sexo"
+								"Nacimiento	Nacimiento"
+								"Direccion1	Direccion1"
+								"Direccion2 Direccion2"
+								"Pais		Pais"
+								"Provincia	Provincia"
+								"Ciudad		Ciudad"		
+								"CP			CP"
+								"Perfil 	Perfil"
+								"Botones	Botones";
+	}
+
 }
