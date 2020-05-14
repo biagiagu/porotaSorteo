@@ -1,20 +1,15 @@
-//PORTOTARED - server.js
+//################ PORTOTARED - server.js ################
 
 //llamamos a las librerias que necesitemos
 //creamos la App Express
 const express = require("express");
 const app = express();
 
-//llamamos a bcrypt que encriptara nuestros passwords
-const bcrypt = require("bcrypt");
-
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
 //armamos la conexion a la BD
 var conexiondb = require('./lib/conexiondb');
-
-
 
 app.use(bodyParser.urlencoded({
     extended:true
@@ -32,7 +27,10 @@ var sorteoController=require('./controller/sorteoController')
 //definimos una ruta para competencias
 app.get('/usuarios', sorteoController.obternerUsuarios);
 
-app.post('/usuarios', sorteoController.crearUsuario);	
+app.post('/crearUsuario', sorteoController.crearUsuario);
+
+
+app.post('cargarPaises', sorteoController.cargarPaises);
 
 // app.get('/competencias/:id/peliculas', competenciaController.obtenerOpciones);
 // app.post('/competencias/:id/voto', competenciaController.guardarVoto);

@@ -2,31 +2,42 @@ drop database if exists porota;
 create database porota;
 use porota;
 
-
 drop table if exists usuarios;
 CREATE TABLE `usuarios` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50),
-  `apellido` varchar(50),
-  `dni` int,
-  `password` varchar(20),
-  `mail` varchar(50),
-  `tel` int,
-  `foto` varchar(50),
-  `idPerfil` int,
-  `sexo` varchar(20),
-  PRIMARY KEY (`id`)
+    `id_usuario` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `nombre` VARCHAR(50) NOT NULL,
+    `apellido` VARCHAR(50) NOT NULL,
+    `dni` INT UNSIGNED,
+    `password` VARCHAR(50) not null,
+    `mail` VARCHAR(50) not null,
+    `telefono` INT UNSIGNED,
+    `fecha_nacimiento` DATE,
+    `foto` VARCHAR(50),
+    `id_perfil` INT1 UNSIGNED,
+    `sexo` VARCHAR(20),
+    `direccion_l1` VARCHAR(50),
+    `direccion_l2` VARCHAR(50),
+    `codigo_postal` VARCHAR(10),
+    `ciudad` VARCHAR(20),
+    `id_provincia` INT2 UNSIGNED,
+    `id_pais` INT2 UNSIGNED,
+    PRIMARY KEY (`id_usuario`)
 );
 
-drop table if exists grupos;
-CREATE TABLE `grupos` (
-  `id` int,
-  `fecha` date,
-  `nombre` varchar(50),
-  `status` varchar(10),
-  `fechaSorteo` date,
-  `fechaVigencia` date,
-  PRIMARY KEY (`id`)
+drop table if exists provincias;
+CREATE TABLE `provincias` (
+  id_provincia INT2 UNSIGNED NOT NULL AUTO_INCREMENT,
+  id_pais int2 unsigned,
+  nombre_provincia varchar(50),
+  PRIMARY KEY (id_provincia)
+);
+
+drop table if exists paises;
+CREATE TABLE `paises` (
+  id_pais INT2 UNSIGNED NOT NULL AUTO_INCREMENT,
+  nombre_pais varchar(50),
+  flag varchar(50),
+  PRIMARY KEY (id_pais)
 );
 
 drop table if exists parejas;

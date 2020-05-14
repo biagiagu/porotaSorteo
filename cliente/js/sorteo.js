@@ -1,35 +1,74 @@
 // Esta es la ip y puerto en que necesitamos que esté el backend disponible
 var server = 'http://localhost:8080';
 
-function SorteosController (){
-
-	// Esta método obtiene y carga toda la lista de usuarios registrados y elegibles para participar
-	this.obtenerUsuarios = function (){
-		// Como luego se necesita usar "this" dentro de la función de callback, se guarda en self la referencia a CompetenciasController
-		var self = this;
-		
-		// Se obtiene desde la api del server el listado de usuarios
-		$.getJSON(server+"/usuarios", function (data) {
-				
-			// Se carga la información obtenida en el DOM
+class SorteosController {
+	constructor() {
+		// Esta método obtiene y carga toda la lista de usuarios registrados y elegibles para participar
+		this.obtenerUsuarios = function () {
+			// Como luego se necesita usar "this" dentro de la función de callback, se guarda en self la referencia a CompetenciasController
+			var self = this;
+			// Se obtiene desde la api del server el listado de usuarios
+			$.getJSON(server + "/usuarios", function (data) {
+				// Se carga la información obtenida en el DOM
 				self.cargarUsuarios(data);
+			});
+		},
+			this.cargarUsuarios = function (data) {
+				// data es el listado de usuarios retornó la api (un array)
+				// Se recorren iterativamente, uno a uno, los resultados de data
+				data.forEach(element => {
+					// creacion cada li dentro del ul.
+					$("#listadoDeParejas").append(`<li class="list-group-item" id="${element.id}">${element.nombre} ${element.apellido}</li>`);
+				});
+			};
+	}	
+}
 
-		 });
-	},
-
-	this.cargarUsuarios = function (data){
-		// data es el listado de usuarios retornó la api (un array)
-
-		// Se recorren iterativamente, uno a uno, los resultados de data
-		data.forEach(element => {
-			
-			// creacion cada li dentro del ul.
-			$("#listaUsuarios").append(`<li class="collection-item" id="${element.id}">${element.nombre} ${element.apellido}</li>`);
-			
-		});
+function verificarPassword(password, confirmarPassword){
+	let okPassw = /^[A-Za-z0-9]\w{4,8}$/;
+	
+	//verificamos que el password cumpla con los requisitos
+	if (password.length!=0 && password.match(okPassw)) {
+		$("#referenciaPassword").text("Password reok");
+		$("#referenciaPassword").css("color", "green");
+		passwordValidation=true;
+	} else {
+		$("#referenciaPassword").css("color", "red");
+		$("#referenciaPassword").text("Recuerde que el password debe tener numeros y letras y entre 4 y 8 caracteres");
+		passwordValidation=false;
 	}
 
-};
+	//verificamos la condicion de confirmacion de password 
+	if (confirmarPassword!=undefined){
+		if(confirmarPassword==password){
+			$("#referenciaConfirmacionPassword").text("Confirmación OK").css("color", "green");
+			passwordConfirmation=true;
+		}else{
+			$("#referenciaConfirmacionPassword").text("El valor introducido no coincide con el de la contraseña").css("color", "red");
+			passwordConfirmation=false;
+		}
+	}
+
+	//verificamos que se cumplan las dos condiciones
+	if(passwordValidation && confirmarPassword){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function checkData(datos) { 
+	//nombre no puede estar vacio
+	
+	if(datos[0].nombre.value.length == 0){
+		$("div.inputNombre small").css("color", "red");
+		$("div.inputNombre small").text("El nombre es obligatorio.");
+		return false;
+	}
+
+ }
+
+
 
 /*COMENTADO---------------------------------------------------------
 	// Esta método obtiene y carga los detalles de una competencia

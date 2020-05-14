@@ -9,3 +9,22 @@ Content-Type: application/json
 	"name": "Veronica",
 	"password": "Otro"
 }
+
+###
+
+POST http://localhost:8080/cargarPaises 
+Content-Type: application/json
+
+{
+	"name": "Veronica",
+	"password": "Otro"
+}
+
+
+###
+### Listado de paises solo con sus nombres y banderas
+GET https://restcountries.eu/rest/v2/all?fields=name;flag
+
+### Listado de paises con todos sus datos
+GET https://restcountries.eu/rest/v2/all
+

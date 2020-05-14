@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 
 var conexiondb = mysql.createConnection({
-    host: 'localhost',
+    host: 'rds-mysql-10mintutorial.cjub9oocoi8n.us-east-1.rds.amazonaws.com',
     port: '3306',
-    user: 'root',
+    user: 'masterUsername',
     password: 'Corralejo#13',
     database: 'porota'
 });

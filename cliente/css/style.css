@@ -37,7 +37,6 @@ body {
 	grid-gap: 1rem;
 }
 
-
 /* ################# Encabezado ################### */
 
 .header.gridContainer {
@@ -48,6 +47,7 @@ body {
 	padding: 1rem;
 	position: sticky;
 	top: 0px;
+	z-index: 100;
 }
 
 /* Logo */
@@ -61,7 +61,8 @@ header.gridContainer .logo{
 header.gridContainer div a,
 header.gridContainer div h1 {
 	display: inline-block;
-	text-decoration: none;
+	
+	
 }
 
 header.gridContainer div img {
@@ -103,6 +104,15 @@ header.gridContainer div h1{
 	justify-content: space-evenly;
 }
 
+.mainContent .nav a {
+	display: flex;
+	width: 15rem;
+	max-width: 200px;
+	color: #fff;
+	justify-content: space-around;
+	margin: 0.3rem 0;
+}
+
 .mainContent .sideBar {
 	grid-area: sideBar;
 }
@@ -121,6 +131,7 @@ header.gridContainer div h1{
 							"Mail		Mail"
 							"Dni		Telefono"
 							"Sexo		Sexo"
+							"Password	ConfirmarPassword"
 							"Nacimiento	Nacimiento"
 							"Direccion1	Direccion1"
 							"Direccion2 Direccion2"
@@ -128,6 +139,11 @@ header.gridContainer div h1{
 							"Ciudad		CP"
 							"Perfil 	."
 							"Botones	Botones";
+}
+
+div small{
+	color: gray;
+	font-size: 0.8rem;
 }
 
 .form .inputNombre {
@@ -176,6 +192,12 @@ header.gridContainer div h1{
 }
 .form .inputPerfil{
 	grid-area: Perfil;
+}
+.form .inputPassword {
+	grid-area: Password;
+}
+.form .inputConfirmarPassword {
+	grid-area: ConfirmarPassword;
 }
 .form .inputSubmit {
 	grid-area: Botones;
@@ -252,6 +274,8 @@ header.gridContainer div h1{
 								"Dni		Dni"
 								"Telefono	Telefono"
 								"Sexo		Sexo"
+								"Password	Password"
+								"ConfirmarPassword ConfirmarPassword"
 								"Nacimiento	Nacimiento"
 								"Direccion1	Direccion1"
 								"Direccion2 Direccion2"
@@ -261,6 +285,7 @@ header.gridContainer div h1{
 								"CP			CP"
 								"Perfil 	Perfil"
 								"Botones	Botones";
-	}
+	
+							}
 
 }
