@@ -41,7 +41,7 @@ body {
 
 .header.gridContainer {
 	grid-template-columns: 1fr 1fr;
-	grid-template-areas: "Logo Logo";
+	grid-template-areas: "logo logo";
 	background-color: #2CF1E4;
 	margin-top: 0;
 	padding: 1rem;
@@ -52,7 +52,7 @@ body {
 
 /* Logo */
 header.gridContainer .logo{
-	grid-area: Logo;
+	grid-area: logo;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -85,10 +85,10 @@ header.gridContainer div h1{
 }
 
 .mainContent.gridContainer {
-	grid-template-columns: 2fr 1fr;
-	grid-template-areas:	"nav	nav"
-							"section	sideBar"
-							"footer	footer";
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:	"nav		nav			nav"
+							"section	section		sideBar"
+							"footer		footer		footer";
 }
 
 .mainContent .section,
@@ -127,18 +127,18 @@ header.gridContainer div h1{
 /* FORMULARIO */
 .form.gridContainer {
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-areas: 	"Nombre		Apellido"
-							"Mail		Mail"
-							"Dni		Telefono"
-							"Sexo		Sexo"
-							"Password	ConfirmarPassword"
-							"Nacimiento	Nacimiento"
-							"Direccion1	Direccion1"
-							"Direccion2 Direccion2"
-							"Pais		Provincia"
-							"Ciudad		CP"
-							"Perfil 	."
-							"Botones	Botones";
+	grid-template-areas: 	"nombre		apellido"
+							"mail		mail"
+							"dni		telefono"
+							"sexo		sexo"
+							"password	confirmarPassword"
+							"nacimiento	nacimiento"
+							"direccion1	direccion1"
+							"direccion2 direccion2"
+							"pais		provincia"
+							"ciudad		CP"
+							"perfil 	."
+							"botones	botones";
 }
 
 div small{
@@ -147,60 +147,58 @@ div small{
 }
 
 .form .inputNombre {
-	grid-area: Nombre;
+	grid-area: nombre;
 }
 .form .inputApellido {
-	grid-area: Apellido;
+	grid-area: apellido;
 }
 .form .inputMail {
-	grid-area: Mail;
+	grid-area: mail;
 }
 .form .inputDni {
-	grid-area: Dni;
+	grid-area: dni;
 }
 .form .inputTelefono {
-	grid-area: Telefono;
+	grid-area: telefono;
 }
 .form .inputSexo {
-	grid-area: Sexo;
-	grid-column-start: 1;
-	grid-column-end: -1;
+	grid-area: sexo;
 }
 .form .inputSexo .form-check-inline {
 	position: static;
 }
 .form .inputNacimiento{
-	grid-area: Nacimiento;
+	grid-area: nacimiento;
 }
 .form .inputDireccionL1 {
-	grid-area: Direccion1;
+	grid-area: direccion1;
 }
 .form .inputDireccionL2 {
-	grid-area: Direccion2;
+	grid-area: direccion2;
 }
 .form .inputCodigoPostal {
 	grid-area: CP;
 }
 .form .inputCiudad {
-	grid-area: Ciudad;
+	grid-area: ciudad;
 }
 .form .inputProvincia {
-	grid-area: Provincia;
+	grid-area: provincia;
 }
 .form .inputPais {
-	grid-area: Pais;
+	grid-area: pais;
 }
 .form .inputPerfil{
-	grid-area: Perfil;
+	grid-area: perfil;
 }
 .form .inputPassword {
-	grid-area: Password;
+	grid-area: password;
 }
 .form .inputConfirmarPassword {
-	grid-area: ConfirmarPassword;
+	grid-area: confirmarPassword;
 }
 .form .inputSubmit {
-	grid-area: Botones;
+	grid-area: botones;
 	display: flex;
 	justify-content: space-around;
 }
@@ -230,12 +228,12 @@ div small{
 	
 	.header.gridContainer {
 		grid-template-columns: 1fr 1fr;
-		grid-template-areas: "Logo Logo";
+		grid-template-areas: "logo logo";
 		
 	}
 
 	.header.gridContainer div img {
-		height: 50px;
+		height: 3.125rem; /* =50px*/
 		vertical-align: inherit; 
 	}
 	
@@ -257,34 +255,34 @@ div small{
 	}
 
 	.mainContent.gridContainer {
-		grid-template-columns: 2fr 1fr;
-		grid-template-areas:	"nav		nav"
-								"section	section"
-								"sideBar	sideBar"
-								"footer		footer";
+		grid-template-areas:	"nav		nav		nav"
+								"section	section	section"
+								"sideBar	sideBar	sideBar"
+								"footer		footer	footer";
 	}
 
 	/* Formulario Responsive */
 
 	.form.gridContainer {
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-areas: 	"Nombre		Nombre"
-								"Apellido	Apellido"
-								"Mail		Mail"
-								"Dni		Dni"
-								"Telefono	Telefono"
-								"Sexo		Sexo"
-								"Password	Password"
-								"ConfirmarPassword ConfirmarPassword"
-								"Nacimiento	Nacimiento"
-								"Direccion1	Direccion1"
-								"Direccion2 Direccion2"
-								"Pais		Pais"
-								"Provincia	Provincia"
-								"Ciudad		Ciudad"		
+		/* grid-template-columns: repeat(2, 1fr); */
+		grid-template-areas: 	"nombre		nombre"
+								"apellido	apellido"
+								"mail		mail"
+								"dni		dni"
+								"telefono	telefono"
+								"sexo		sexo"
+								"password	password"
+								"confirmarPassword confirmarPassword"
+								"nacimiento	nacimiento"
+								"direccion1	direccion1"
+								"direccion2 direccion2"
+								"pais		pais"
+								"provincia	provincia"
+								"ciudad		ciudad"		
 								"CP			CP"
-								"Perfil 	Perfil"
-								"Botones	Botones";
+								"perfil 	perfil"
+								"botones	botones"
+								"botones	botones";
 	
 							}
 
